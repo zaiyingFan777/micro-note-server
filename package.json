@@ -24,7 +24,7 @@
     "*.{md,json}": [
       "prettier --write"
     ],
-    "*.{src,apps,libs,test}/**/*.ts": [
+    "{src,apps,libs,test}/**/*.ts": [
       "prettier --parser=typescript --write",
       "eslint --fix"
     ]
