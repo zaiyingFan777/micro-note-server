@@ -21,11 +21,12 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
+    "*.{md,json}": [
       "prettier --write"
     ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
+    "*.{src,apps,libs,test}/**/*.ts": [
+      "prettier --parser=typescript --write",
+      "eslint --fix"
     ]
   },
   "dependencies": {
