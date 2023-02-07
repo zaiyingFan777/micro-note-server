@@ -3,3 +3,5 @@ export interface HttpResponse {
 	data: any;
 	msg: string;
 }
+
+// 成功失败

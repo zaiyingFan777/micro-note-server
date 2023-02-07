@@ -2,7 +2,7 @@ import { Repository } from 'typeorm';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
-import { HttpResponse } from '../common/httpResponse.interface';
+import { HttpResponse } from '../common/httpResponse';
 import { User } from './entities/user.entity';
 
 @Injectable()
@@ -13,7 +13,7 @@ export class UserService {
 	) {}
 
 	// 判断用户是否存在，并添加到数据库
-	async addUserMain(user: CreateUserDto): Promise<HttpResponse> {
+	async register(user: CreateUserDto): Promise<HttpResponse> {
 		// 先去数据库查询是否存在该email
 		const { email }: { email: string } = user;
 		const isCurrentRegisterUserExisted = await this.findUserByEmail(email);
